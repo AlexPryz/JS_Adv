@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <form>
+        <input type="text" id="myInput" name="input" size="85">
+        <br>
+        <br>
+        <input type="button" value="Select first" onclick="selectFirst()">
+        <input type="button" value="Select last" onclick="selectLast()">
+        <input type="button" value="Select next" onclick="selectNext()">
+        <input type="button" value="Select previous" onclick="selectPrevious()">
+        <input type="button" value="Add" onclick="add(this.form)">
+        <input type="button" value="Delete" onclick="remove()">
+        <input type="button" value="Add to beginning" onclick="addBefore(this.form)">
+    </form>
+    <ul id="list"><li>First</li><li>Second</li><li>Third</li><li>Fourth</li></ul>
+</body>
+</html>
