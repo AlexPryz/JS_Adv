@@ -1,0 +1,45 @@
+<!-- 
+    Запросите у пользователя ввести какую-то фразу. 
+    Отобразите каждое отдельное слово в виде списка ul li. 
+    Также отобразите первое слово UPPERCASE, а последние 2 с маленькой. 
+    Найдите все буквы "а" их количество в модальное окно. 
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+
+<body>
+    <input type="text" value="">
+    <script>
+        var j = 0;
+        var b = new RegExp("a", "g");
+        var str = prompt("Введите строку");
+        var substrs = str.split(" ");
+        if (substrs.length > 3) {
+            var result = str.match(b);
+            j = result.length;
+            /*var verySubstr = str.split("");
+            for (i = 0; i < verySubstr.length - 1; i++) {
+                if (verySubstr[i] == "a") {
+                    j = j + 1;
+                }
+            }*/
+            alert('Количество букв "а": ' + j);
+            document.write("<ul>" + "<li>" + substrs.join("<li>") + "</li>" + "</ul>" + "<br>");
+            document.write("Первое слово:" + " " + substrs[0].toUpperCase() + "<br>");
+            document.write("Два последние слова:" + " " + substrs[substrs.length - 2].toLowerCase() + " и " + substrs[
+                substrs.length - 1].toLowerCase());
+
+        } else {
+            alert("Строка слишком короткая");
+        }
+    </script>
+
+</body>
+
+</html>

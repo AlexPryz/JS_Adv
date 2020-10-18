@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Id and classes</title>
+    <style>
+        /*#id1 {
+            color: red;
+        }
+        div.class1 {
+            color: blue;
+            font-size: 14px;
+            text-decoration: underline;
+        }*/
+        /* 
+        Перепишите все селекторы из первой папки 001_CSS_Selectors с помощью известных Вам методов и свойств.
+        В примере с классом добавьте к существующем классу, класс с именем newclass, а также выведите в консоль все стили что есть у 
+        элемента    с этим классом
+        В примере с индентификатором добавьте свойства marginTop с значением 10px и background с значением red
+
+        */
+    </style>
+
+</head>
+<body>
+    <h1 id="id1">Title</h1>
+    <div class="class1" >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla consequuntur, obcaecati recusandae enim laboriosam eaque, sint incidunt. Perferendis mollitia incidunt blanditiis eveniet, fuga sapiente. Magni dicta maxime fugiat sint soluta?        
+    </div>
+    <input type="button" value="Change CSS">
+    <script>
+        var button = document.getElementsByTagName("input")[0];
+        button.onclick = function changeCss () {
+            var idNewCss = document.querySelector("#id1");
+            idNewCss.style.backgroundColor = "red";
+            idNewCss.style.marginTop = "10px";
+
+            var addClass = document.getElementsByClassName("class1")[0];
+            addClass.classList += " class2";
+            
+
+            var classNewCss = document.getElementsByClassName("class2")[0];
+            classNewCss.style.color = "blue";
+            classNewCss.style.textDecoration = "underline";
+            classNewCss.style.fontSize = "14px";
+
+            var getStyle = getComputedStyle(classNewCss);
+            console.log(getStyle);
+
+        }
+
+</script>
+</body>
+</html>

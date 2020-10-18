@@ -1,0 +1,38 @@
+<!-- Создайте функцию, которая возвращает день недели для даты.
+День нужно возвратить в формате - понедельник имеет номер 1, вторник номер 2, …, воскресенье - номер 7. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Date.set</title>
+</head>
+
+<body>
+    <input type="date">
+   
+    <button>Узнать день недели</button>
+
+    <script type="text/javascript" language="JavaScript">
+        var button = document.querySelector('button');
+        button.addEventListener('click', showDayOfWeek);
+        function showDayOfWeek() {
+            var input = document.querySelector("input").value;
+            console.log(typeof(input));
+            var date = new Date();
+            date.setDate(input.slice(8, 10));
+            date.setMonth(input.slice(5, 7) - 1);
+            date.setFullYear(input.slice(0, 4));
+            var day = date.getDay();
+            if (day == 0) {
+                day = 7;
+            }
+            alert(date + " Номер дня недели: " + day);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+ <!-- 
+	1. back to top button; drag and drop;
+	2. создайте div, при клике на него, div начинает двигаться вправо, при клике на кнопку - останавливается,
+	при попадании div к краю окна, он переходит к началу окна.
+    -->
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         div {
+             height: 100px;
+             width: 100px;
+             border-radius: 50px;
+             background-color: red;
+             position: absolute;
+             left: 100px;
+             top: 100px;
+
+         }
+     </style>
+ </head>
+
+ <body>
+     <div></div>
+     <script>
+         var i = 0;
+         var div = document.querySelector("div");
+         div.onmousedown = function (e) {
+             moveDiv();
+
+             function moveDiv(e) {
+
+                 div.style.left = event.pageX - div.offsetWidth / 2 + "px";
+                 div.style.top = event.pageY - div.offsetHeight / 2 + "px";
+
+             }
+             document.onmousemove = function (e) {
+                 moveDiv(e);
+             }
+             div.onmouseup = function () {
+                 document.onmousemove = null;
+                 div.onmouseup = null;
+             }
+         }
+     </script>
+ </body>
+
+ </html>

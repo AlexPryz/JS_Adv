@@ -1,0 +1,37 @@
+<!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления.
+Используйте только один обработчик.
+
+Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы,
+подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    window.onload = function () {
+      var mainDiv = document.getElementById("main-div");
+      mainDiv.addEventListener("mouseover", showText);
+
+      function showText(e) {
+        var target = e && e.target || window.event.srcElement;
+        var dataToggleId = target.getAttribute('data-tooltip');
+        if (!dataToggleId) {
+          return
+        };
+        target.setAttribute('title', dataToggleId);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="main-div">
+
+    <span data-tooltip="наведите">наведите</span>
+    <span data-tooltip="для">для</span>
+    <span data-tooltip="подсказки">подсказки</span>
+  </div>
+</body>
+
+</html>

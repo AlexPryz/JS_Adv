@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Наследование</title>
+    <script type="text/javascript">
+        function Man(name, surname) {
+            this.name = name;
+            this.surname = surname;
+            this.eat = function () {
+                document.write("I can eat");
+            };
+            this.walk = function () {
+                document.write("I can walk");
+            };
+            this.drink = function () {
+                document.write("I can drink");
+            };
+
+            this.showInfo = function () {
+                document.write("Этoт может ")
+                document.write(" <br>");
+                for (var key in this) {
+                    document.write(key);
+                    document.write(" <br>");
+                }
+                document.write(" <br>");
+            };
+        };
+
+
+
+        function Doctor() {
+            this.heal = function () {
+                document.write("heal");
+            };
+            this.showInfo = function () {
+                document.write("Врач может")
+                document.write(" <br>");
+                for (var key in this) {
+                    document.write(key);
+                    document.write(" <br>");
+                }
+                document.write(" <br>");
+            };
+            
+        };
+
+        function Soldier(name, surname) {
+
+            this.shoot = function () {
+                document.write("shoot");
+            };
+            this.showInfo = function () {
+                document.write("Солдат может")
+                document.write(" <br>");
+                for (var key in this) {
+                    document.write(key);
+                    document.write(" <br>");
+                }
+                document.write(" <br>");
+            };
+        };
+
+        Doctor.prototype = new Man();
+        Soldier.prototype = new Man();
+
+        var soldier = new Soldier();
+        var doctor = new Doctor();
+
+        soldier.showInfo();
+        doctor.showInfo();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

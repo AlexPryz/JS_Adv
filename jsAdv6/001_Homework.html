@@ -1,0 +1,59 @@
+    <!-- 
+	1. back to top button; drag and drop;
+	2. создайте div, при клике на него, div начинает двигаться вправо, при клике на кнопку - останавливается,
+	при попадании div к краю окна, он переходит к началу окна.
+	-->
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+    	<meta charset="UTF-8">
+    	<title>HomeWork</title>
+    	<style>
+    		div {
+    			height: 100px;
+    			width: 100px;
+    			border-radius: 50px;
+    			background-color: red;
+    			position: absolute;
+    			left: 0;
+
+    		}
+
+    		button {
+    			position: absolute;
+    			top: 200px;
+    		}
+    	</style>
+    </head>
+
+    <body>
+    	<div></div>
+    	<button>stop</button>
+    	<script>
+    		var i = 0;
+			var a;
+    		document.body.style.overflow = "hidden";
+    		var div = document.querySelector("div");
+			var button = document.querySelector("button");
+			div.addEventListener("click", go)
+    		button.addEventListener("click", stop)
+    		function go(e) {
+    			a = setInterval(function () {
+    				i++
+    				if (i > screen.width - 100) {
+    					i = 0;
+    				}
+    				div.style.left = i + "px";
+    			}, 1);
+				
+    		}
+			function stop(){
+				clearInterval(a);
+				
+			}
+			
+    	</script>
+    </body>
+
+    </html>

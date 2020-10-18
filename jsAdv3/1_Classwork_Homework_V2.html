@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+
+<body>
+    <!-- Создайте счетчик секунд, который начинает отчет с 1 и заканчивается на 30,
+также добавьте кнопки которые останавливают отчет, и запускают его заново и добавьте кнопку
+обнуляющую отcчет. Также попробуйте изменить код так чтобы отсчет начинался с 30 и заканчивался на 1. -->
+
+    <ul>
+        <h3>Выберите направление отсчета</h3>
+        <li><input type="radio" name="checkBox" checked onclick="check()">0 - 30</li>
+        <li><input type="radio" name="checkBox" onclick="check()">30 - 0</li>
+    </ul>
+    <button onclick="go()">Start/resume</button>
+    <button onclick="pause()">Pause</button>
+    <button onclick="reset()">Reset</button>
+
+
+
+    <script>
+        var i;
+        var timer;
+        var checkBoxValue;
+        var go;
+        var pause;
+        var reset;
+
+        function check() {
+            pause = function stop() {
+                clearInterval(timer);
+            }();
+            var rad = document.getElementsByTagName('input');
+            for (var j = 0; j < rad.length; j++) {
+                if (rad[0].checked) {
+                    i = 1;
+                    go = function go() {
+                        clearInterval(timer);
+                        timer = setInterval(function () {
+                            console.log(i++);
+                            if (i > 30) {
+                                i = 30;
+                                clearInterval(timer);
+                            }
+                        }, 1000);
+                    }
+
+                    pause = function stop() {
+                        clearInterval(timer);
+                    }
+
+                    reset = function reset() {
+                        clearInterval(timer);
+                        i = 1;
+                    }
+
+                } else {
+
+                    i = 30;
+                    go = function reverseWorks() {
+
+                        timer = setInterval(function () {
+                            console.log(i--);
+                            if (i < 1) {
+                                i = 1;
+                                clearInterval(timer);
+                            }
+                        }, 1000);
+                    };
+
+                    pause = function stop() {
+                        clearInterval(timer);
+                    }
+
+                    reset = function reset() {
+                        clearInterval(timer);
+                        i = 30;
+                    }
+                }
+            }
+        }
+
+        check();
+    </script>
+
+</body>
+</body>
+
+</html>

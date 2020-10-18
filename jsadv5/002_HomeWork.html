@@ -1,0 +1,35 @@
+    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления.
+    Используйте только один обработчик.-->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+        div {
+            border: red 3px solid;
+            margin: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div><button>delete</button><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam voluptatibus facilis cum suscipit accusantium, sequi aliquid esse repellendus natus quas eius ipsam voluptatem ut obcaecati sapiente doloribus sint doloremque quasi!</div>
+    <div><button>delete</button><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos illo porro distinctio perferendis fugiat vero eaque quis aperiam. Dolorem atque alias eveniet eum vel maxime eaque reprehenderit itaque minus ducimus?</div>
+    <div><button>delete</button><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid odit, eveniet atque ipsa minima expedita culpa laboriosam aut hic, nihil soluta maxime ducimus nulla cupiditate est dolorem optio eius eaque.</div>
+    <div><button>delete</button><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, distinctio sunt molestias similique nostrum esse. Rerum voluptatibus expedita optio? Voluptate dolore vitae eveniet distinctio dolor! Sunt ullam eos eius deserunt!</div>
+    <div><button>delete</button><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quos facilis, animi, consectetur placeat delectus optio cupiditate, quam repellat aliquam hic explicabo? Possimus non, modi laudantium animi dolorum quibusdam accusantium.</div>
+    
+
+    <script>
+        var button = document.getElementsByTagName("button");
+        for (var i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", deleteDiv);
+        function deleteDiv() {
+            this.parentNode.remove();
+        }
+        }
+
+    </script>
+</body>
+</html>

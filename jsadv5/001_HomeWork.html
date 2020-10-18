@@ -1,0 +1,59 @@
+<!--
+Создайте ссылку и див с текстом внутри, который изначально при загрузке страницы будет скрыт.
+При клике на ссылку див появляется, если повторно нажать ссылку див и текст должны пропасть.
+Также создайте кнопку, которая будет отменять выполнение обработчика клика по ссылке.
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <style>
+        div {
+            margin: 30px;
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" id="myHref">Show div/Hide div</a>
+    <button id="myButton">Cancel</button>
+    <div id="div">text inside</div>
+    <script>
+        var div = document.getElementById("div");
+        var href = document.getElementById("myHref");
+        var cancel = document.getElementById("myButton");
+        var i = 0;
+        function clickHandler(e) {
+                i = i + 1;        
+
+        if (i % 2 !== 0) {
+            function clickHandler1(e) {
+                div.style.display = "block";
+                
+            }
+        } else {
+            function clickHandler1(e) {
+                div.style.display = "none";
+                
+            }
+        }
+        clickHandler1();
+    }
+        function removeHandler() {
+            href.removeEventListener("click", clickHandler);
+
+        }
+
+        href.addEventListener("click", clickHandler)
+        cancel.addEventListener("click", removeHandler)
+    </script>
+</body>
+
+</html>
