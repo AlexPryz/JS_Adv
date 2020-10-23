@@ -66,11 +66,12 @@ function letsGo() {
             request.open('GET', url);
             request.responseType = 'json';
             request.send();
+            var subtype = document.querySelector('#subtype');
+            subtype.innerHTML = "its not assigned";
             request.onload = function () {
                 var jsonObj = request.response;
-                var subtype = document.querySelector('#subtype');
                 if (!jsonObj) {
-                    subtype.innerHTML = "its not assigned";
+                    return;
                 } else {
                     subtype = document.querySelector('#subtype');
                     subtype.innerHTML = jsonObj.name;
