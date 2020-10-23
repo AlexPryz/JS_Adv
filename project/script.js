@@ -12,7 +12,6 @@ function letsGo() {
     request.send();
     request.onload = function () {
         var jsonObj = request.response;
-        console.log(jsonObj);
         createDivs(jsonObj);
         x = jsonObj;
         var upArrow = document.querySelector('#up');
@@ -54,7 +53,7 @@ function letsGo() {
             request.send();
             request.onload = function () {
                 var jsonObj = request.response;
-                console.log(jsonObj.name);
+                
 
                 var planet = document.querySelector('#planet');
                 planet.innerHTML = jsonObj.name;
@@ -85,7 +84,7 @@ function letsGo() {
         for (var j = 0; j < url.length; j++) {
             getMovies(jsonObj.results[idStr].films);
             function getMovies(url) {
-                console.log(url);
+               
                 var request = new XMLHttpRequest();
                 request.open('GET', url[j]);
                 request.responseType = 'json';
