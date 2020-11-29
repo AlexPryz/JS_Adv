@@ -114,10 +114,11 @@ i {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    opacity: 1;
+    transition: opacity 1s; 
 }
 #card {
-    display: none; 
+    display: none;   
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -180,4 +181,3 @@ i {
     justify-content: center;
    
 }
-
